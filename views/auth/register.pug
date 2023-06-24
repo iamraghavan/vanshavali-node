@@ -1,0 +1,108 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no')
+    link(href='favicon.png', rel='icon')
+    title Vanshavali - Profile - Signup
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css')
+    script(src='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js')
+    //
+      Web Fonts
+      =========================
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900', type='text/css')
+    //
+      Stylesheet
+      =========================
+    link(rel='stylesheet', type='text/css', href='https://harnishdesign.net/demo/html/oxyy/vendor/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='css/stylesheet.css')
+    // Colors Css
+    link#color-switcher(type='text/css', rel='stylesheet', href='#')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', integrity='sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+      .header-logo-text {
+      font-family: 'Mouse Memoirs', sans-serif;
+      color: #FFF;
+      }
+  body
+    // Preloader
+    .preloader.preloader-dark
+      .lds-ellipsis
+        div
+        div
+        div
+        div
+    // Preloader End
+    #main-wrapper.oxyy-login-register
+      .container-fluid.px-0
+        .row.g-0.min-vh-100
+          //
+            Welcome Text
+            =========================
+          .col-md-4
+            .hero-wrap.h-100
+              .hero-mask.opacity-5.bg-dark
+              .hero-bg.hero-bg-scroll(style="background-image:url('https://images.unsplash.com/photo-1602255680702-c47261041a97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80');")
+              .hero-content.mx-auto.w-100.h-100
+                .container.d-flex.flex-column.h-100
+                  .row.g-0
+                    .col-11.col-lg-9.mx-auto
+                      .logo.mt-5.mb-5
+                        h3.header-logo-text Vanshavali
+                  .row.g-0.mt-3
+                    .col-11.col-lg-9.mx-auto
+                      h1.text-9.text-white.fw-300.mb-5
+                        span.fw-500 Welcome
+                        | ,Looks like you&apos;re new here!
+          // Welcome Text End
+          //
+            Register Form
+            =========================
+          .col-md-8.d-flex.flex-column.align-items-center.bg-dark
+            .container.my-auto.py-5
+              .row.g-0
+                .col-11.col-md-8.col-lg-7.col-xl-6.mx-auto
+                  p.text-2.text-light
+                    | Already a member? 
+                    a.fw-500(href='login') Login
+                  h3.text-white.mb-4 Register Your Account
+                  .d-flex.align-items-center.my-4
+                    hr.col-1.bg-dark-4
+                    span.mx-3.text-2.text-muted OR
+                    hr.flex-grow-1.bg-dark-4
+                  if error
+                  p.error= error
+                  form#registration-form.form-dark(action="/user-register", method="POST")
+                    .mb-3
+                      label.form-label.text-light(for='username') Username
+                      input#username.form-control(type='text', required='',name="username", placeholder='Enter Your username')
+                    .mb-3
+                      label.form-label.text-light(for='email') Email Address
+                      input#email.form-control(type='email', required='',name="email" placeholder='Enter Your Email')
+                    .mb-3
+                      label.form-label.text-light(for='password') Password
+                      input#password.form-control(type='password', required='',name="password" placeholder='Enter Password')
+                    .mb-3
+                      label.form-label.text-light(for='confirm_password') Confirm Password
+                      input#confirm_password.form-control(type='password', required='',name="confirm_password" placeholder='Enter Password')
+                    .form-check.text-light.my-4
+                      input#agree.form-check-input(name='agree', type='checkbox')
+                      label.form-check-label(for='agree')
+                        | I agree to the 
+                        a(href='#') Terms
+                                                                  and 
+                        a(href='#') Privacy Policy
+                        | .
+                    button.btn.btn-primary.shadow-none.my-2(type="submit", value="Register") Register
+          // Register Form End
+    // Script
+    script(src='https://harnishdesign.net/demo/html/oxyy/vendor/jquery/jquery.min.js')
+    script(src='https://harnishdesign.net/demo/html/oxyy/vendor/bootstrap/js/bootstrap.bundle.min.js')
+    // Style Switcher
+    script(src='https://harnishdesign.net/demo/html/oxyy/js/switcher.min.js')
+    script(src='https://harnishdesign.net/demo/html/oxyy/js/theme.js')
+    script(src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js')
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js')

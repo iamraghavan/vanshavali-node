@@ -1,0 +1,112 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no')
+    link(href='favicon.png', rel='icon')
+    title Vanshavali - Profile - Login
+    meta(name='description', content='Login and Register Form Html Template')
+    meta(name='author', content='harnishdesign.net')
+    //
+      Web Fonts
+      =========================
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900', type='text/css')
+    //
+      Stylesheet
+      =========================
+    link(rel='stylesheet', type='text/css', href='css/profile/css/bootstrap.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='css/stylesheet.css')
+    // Colors Css
+    link#color-switcher(type='text/css', rel='stylesheet', href='#')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', integrity='sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+      .header-logo-text {
+      font-family: 'Mouse Memoirs', sans-serif;
+      color: #FFF;
+      }
+  body
+    // Preloader
+    .preloader.preloader-dark
+      .lds-ellipsis
+        div
+        div
+        div
+        div
+    // Preloader End
+    #main-wrapper.oxyy-login-register
+      .container-fluid.px-0
+        .row.g-0.min-vh-100
+          //
+            Welcome Text
+            =========================
+          .col-md-4
+            .hero-wrap.d-flex.align-items-center.h-100
+              .hero-mask.opacity-5.bg-dark
+              .hero-bg.hero-bg-scroll(style="background-image:url('https://images.unsplash.com/photo-1611024847487-e26177381a3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');")
+              .hero-content.mx-auto.w-100.h-100
+                .container.d-flex.flex-column.h-100
+                  .row.g-0
+                    .col-11.col-lg-9.mx-auto
+                      .logo.mt-5.mb-5
+                        h3.header-logo-text Vanshavali
+                  .row.g-0.mt-3
+                    .col-11.col-lg-9.mx-auto
+                      h1.text-9.text-white.fw-300.mb-5
+                        span.fw-500 Welcome
+                        | , We are glad to see you again!
+          // Welcome Text End
+          //
+            Login Form
+            =========================
+          .col-md-8.d-flex.flex-column.align-items-center.bg-dark
+            .container.my-auto.py-5
+              .row.g-0
+                .col-11.col-md-8.col-lg-7.col-xl-6.mx-auto
+                  p.text-2.text-light
+                    | Not a member? 
+                    a.fw-500(href='register') Register
+                  h3.text-white.mb-4 Log In to Your Account
+                  //
+                    <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm fw-400 rounded-3 shadow-none"><span class="me-2"><i class="fa fa-google"></i></span><span class="mx-3">Log in with Google</span></button>
+                    <ul class="social-icons d-inline-block social-icons-rounded">
+                    <li class="social-icons-apple mb-0"><a class="bg-dark-4" href="#" data-bs-toggle="tooltip" data-bs-original-title="Sign in with apple"><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                    </div>
+                  .d-flex.align-items-center.my-4
+                    hr.col-1.bg-dark-4
+                    span.mx-3.text-2.text-muted OR
+                    hr.flex-grow-1.bg-dark-4
+                  form#login-form.form-dark(autocomplete='off', method='post')
+                    .mb-3
+                      label.form-label.text-light(for='emailAddress') Email Address
+                      input#email.form-control(type='email', autocomplete='nope', required='', placeholder='Enter Your Email')
+                    .mb-3
+                      label.form-label.text-light(for='loginPassword') Password
+                      a.float-end.text-2(href='forgot-password') Forgot Password ?
+                      input#password.form-control(type='password', autocomplete='nope', required='', placeholder='Enter Password')
+                    button.btn.btn-primary.my-2(type='submit') Log in
+          // Login Form End
+    //
+      <style>
+      .swal-modal {
+      background-color: rgba(0, 0, 0, 0.6);
+      }
+      .swal-text {
+      color: #FFF;
+      }
+      </style>
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', integrity='sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    // Script
+    script(src='https://harnishdesign.net/demo/html/oxyy/vendor/jquery/jquery.min.js')
+    |  
+    script(src='https://harnishdesign.net/demo/html/oxyy/vendor/bootstrap/js/bootstrap.bundle.min.js')
+    // Style Switcher
+    script(src='https://harnishdesign.net/demo/html/oxyy/js/switcher.min.js')
+    |  
+    script(src='https://harnishdesign.net/demo/html/oxyy/js/theme.js')
+    script(src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js')
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js')

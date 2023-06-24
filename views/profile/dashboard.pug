@@ -1,0 +1,245 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Profile - Dashboard - Vanshavali
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap', rel='stylesheet')
+    link(href='https://cdn.jsdelivr.net/gh/iamraghavan/Vanshavali@main/css/ishulove.css', rel='stylesheet')
+    link(rel='stylesheet', href='css/profile/css/bootstrap.css')
+    link(rel='stylesheet', href='js/profile/vendors/iconly/bold.css')
+    link(rel='stylesheet', href='js/profile/vendors/perfect-scrollbar/perfect-scrollbar.css')
+    link(rel='stylesheet', href='js/profile/vendors/bootstrap-icons/bootstrap-icons.css')
+    link(rel='stylesheet', href='css/profile/css/app.css')
+    link(rel='shortcut icon', href='favicon.png', type='image/x-icon')
+    | &#x9;
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+      .header-logo-text {
+      font-family: 'Mouse Memoirs', sans-serif;
+      color: #FFF;
+      }
+  body
+    #app
+      #sidebar.active
+        .sidebar-wrapper.active
+          .sidebar-header
+            .d-flex.justify-content-between
+              .logo
+                h3.header-logo-text Vanshavali
+              .toggler
+                a.sidebar-hide.d-xl-none.d-block(href='#')
+                  i.bi.bi-x.bi-middle
+          .sidebar-menu
+            ul.menu
+              li.sidebar-title Menu
+              li.sidebar-item
+                a.sidebar-link(href='./index.html')
+                  i.bi.bi-person-circle
+                  span Profile
+              li.sidebar-item
+                a.sidebar-link(href='./index.html')
+                  i.bi.bi-chat-quote-fill
+                  span Foreroom
+              li.sidebar-item
+                a.sidebar-link(href='./family-tree.html')
+                  i.bi.bi-option
+                  span Family Tree
+          button.sidebar-toggler.btn.x
+            i(data-feather='x')
+      #main.layout-navbar
+        header.mb-3
+          nav.navbar.navbar-expand.navbar-light
+            .container-fluid
+              a.burger-btn.d-block(href='#')
+                i.bi.bi-justify.fs-3
+              button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+              #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+                  li.nav-item.dropdown.me-3
+                    a.nav-link.active.dropdown-toggle(href='#', data-bs-toggle='dropdown', aria-expanded='false')
+                      i.bi.bi-bell.bi-sub.fs-4.text-gray-600
+                    ul.dropdown-menu.dropdown-menu-end(aria-labelledby='dropdownMenuButton')
+                      li
+                        h6.dropdown-header Notifications
+                      li
+                        a.dropdown-item No notification available
+                .dropdown
+                  a(href='#', data-bs-toggle='dropdown', aria-expanded='false')
+                    .user-menu.d-flex
+                      .user-name.text-end.me-3
+                        h6.mb-0.text-gray-600 Administrator
+                        p.mb-0.text-sm.text-gray-600
+                          span#user.message
+                            | Hello, 
+                            email-id
+                      .user-img.d-flex.align-items-center
+                        .avatar.avatar-md
+                          img(src='https://kurudhi.netlify.app/admin/images/man.png')
+                  ul.dropdown-menu.dropdown-menu-end(aria-labelledby='dropdownMenuButton')
+                    li
+                      h6.dropdown-header Hello, Admin!
+                    //
+                      <li class="sidebar-item  ">
+                      <a href="./index.html" class='sidebar-link'>
+                      <i class="bi bi-chat-quote-fill"></i>
+                      <span>Foreroom</span>
+                      </a>
+                      </li>
+                      <li class="sidebar-item  ">
+                      <a href="./index.html" class='sidebar-link'>
+                      <i class="bi bi-option"></i>
+                      <span>Family Tree</span>
+                      </a>
+                      </li>
+                    //
+                      <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
+                      Profile</a></li>
+                    li
+                      a.dropdown-item(href='#')
+                        i.icon-mid.bi.bi-chat-quote-fill.me-2
+                                                              Foreroom
+                    li
+                      a.dropdown-item(href='./family-tree.html')
+                        i.icon-mid.bi.bi-option.me-2
+                                                                  Family Tree
+                    //
+                      <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                      Settings</a></li>
+                    //
+                      <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
+                      Wallet</a></li>
+                      <li>
+                    hr.dropdown-divider
+                    li(onclick='logout()')
+                      a.dropdown-item(href='#')
+                        i.icon-mid.bi.bi-box-arrow-left.me-2
+                        |  Logout
+        #main-content
+          div
+            .collapse-tabs.new-property-step
+              .tab-content.shadow-none.p-0
+                .page-content
+                  .form-v10-content
+                    form#registrationform.form-detail(action='', method='post', autocomplete='nope')
+                      .form-left
+                        h2 General Information
+                        .form-group
+                          .form-row.form-row-1
+                            input#id1.input-text(type='text', oninput='this.value = this.value.toUpperCase()', name='fullname', inputmode='text', placeholder='Full Name', autocomplete='nope', required='')
+                          .form-row.form-row-2
+                            select#id4(name='gender', autocomplete='off')
+                              option(value='#') Select Your Gender
+                              option(value='MALE') MALE
+                              option(value='Female') FEMALE
+                              // <option>TRANSGENDER</option>
+                            span.select-btn
+                              i.zmdi.zmdi-chevron-down
+                        .form-group
+                          .form-row.form-row-1
+                            input#id1.input-text(type='text', oninput='this.value = this.value.toUpperCase()', name='fullname', inputmode='text', placeholder='Relationship', autocomplete='nope', required='')
+                        .form-group
+                          .form-row.form-row-1
+                            // <input placeholder="Date of Birth" type="text" onfocus="(this.type='date')" id="date">
+                            input#TextBox3(runat='server', name='DOB', placeholder='Date Of Birth', type='text', onfocus="(this.type='date')", onchange='DateSelectionChanged()', autocomplete='off')
+                          .form-row.form-row-2
+                            input#TextBox4(name='agevalue', placeholder='Age', type='text', required='', disabled='', autocomplete='off')
+                        h2 Contact Information
+                        .form-group
+                          .form-row.form-row-1
+                            input#email_input.input-text(inputmode='email', name='mailid', type='email', pattern='[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})', placeholder='Email', required='', autocomplete='off')
+                          .form-row.form-row-2
+                            input#id6.business(inputmode='tel', name='cNumber', type='number', pattern='[0-9]*', placeholder='Contact Number', required='', autocomplete='off')
+                          //
+                            <div class="form-row form-row-2">
+                            <input inputmode="tel" name="wNumber" type="number" pattern="[0-9]*" inputmode="numeric" id="id6" class="business" placeholder="Whatsapp Number" required>
+                            </div>
+                        h2 Location Information
+                        .form-group
+                          .form-row.form-row-1
+                            input#zipcode(inputmode='tel', type='text', maxlength='6', name='vPincode', pattern='[0-9]*', placeholder='Pincode', required='', autocomplete='off')
+                          .form-row.form-row-2
+                            input#Area.input-text(type='text', oninput='this.value = this.value.toUpperCase()', name='vArea', inputmode='text', placeholder='Area', readonly='', required='', autocomplete='off')
+                        .form-group
+                          .form-row.form-row-1
+                            input#District.input-text(type='text', oninput='this.value = this.value.toUpperCase()', name='vDistrict', inputmode='text', placeholder='District', readonly='', required='', autocomplete='off')
+                          .form-row.form-row-2
+                            input#State.input-text(type='text', oninput='this.value = this.value.toUpperCase()', name='vState', inputmode='text', placeholder='State', readonly='', required='', autocomplete='off')
+                          .form-row.form-row-2
+                            input#Country.input-text(type='text', oninput='this.value = this.value.toUpperCase()', name='vCountry', inputmode='text', placeholder='Country', readonly='', required='', autocomplete='off')
+                        script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+                        script.
+                          $('#zipcode').change(function () {
+                          var zipcode = $(this).val();
+                          $.ajax({
+                          url: 'https://api.postalpincode.in/pincode/' + zipcode,
+                          type: 'GET',
+                          success: function (response) {
+                          let postArea = response[0].PostOffice[0].Name;
+                          console.log("Area : " + postArea);
+                          $('#Area').val(postArea);
+                          let postDistrict = response[0].PostOffice[0].District;
+                          console.log(postDistrict);
+                          $('#District').val(postDistrict);
+                          let postState = response[0].PostOffice[0].State;
+                          console.log(postState);
+                          $('#State').val(postState);
+                          let postCountry = response[0].PostOffice[0].Country;
+                          console.log(postCountry);
+                          $('#Country').val(postCountry);
+                          }
+                          });
+                          });
+                        .form-group
+                          //
+                            <div class="form-row form-row-1">
+                            <button class="btn btn-lg btn-success mr-4 mb-4 ">Get Address</button>
+                            </div>
+                        .col-12.d-flex.justify-content-center
+                          button.btn.btn-lg.bg-btn-submit.mr-4.mb-4.hover-success(id='', onclick='check()', type='submit', name='Submit', value='Submit', sendmessage()='') Submit
+                          button.btn.btn-lg.bg-btn-clr.mr-4.mb-4.hover-primary(type='reset') Reset
+                        br
+          footer
+            .footer.clearfix.mb-0.text-muted
+              .float-start
+                p
+                  span#current-year
+                  |  &copy; Vanshavali
+    script(src='js/profile/vendors/perfect-scrollbar/perfect-scrollbar.min.js')
+    script(src='js/profile/bootstrap.bundle.min.js')
+    script(src='js/profile/main.js')
+    script.
+      // Get the current year
+      var currentYear = new Date().getFullYear();
+      // Set the current year in the HTML element with the specified ID
+      var currentYearElement = document.getElementById('current-year');
+      currentYearElement.textContent = currentYear.toString();
+    script(type='text/javascript').
+      function DateSelectionChanged() {
+      var today = new Date();
+      var dob = new Date(document.getElementById('TextBox3').value);
+      var months = (today.getMonth() - dob.getMonth() + (12 * (today.getFullYear() - dob.getFullYear())));
+      let findDate =  Math.round(months / 12);
+      let donorName = document.getElementById('id1').value;
+      console.log(donorName);
+      if(findDate >= 18 && findDate < 55){
+      document.getElementById('TextBox4').value = ("AGE : " + "" + findDate);
+      }
+      else{
+      alert('Age Restricted' + ' ' + `Sorry! ${donorName} you are not allowed to vanshavali`
+      );
+      }
+      }
+      // var to = new Date();
+      // alert(to);
+      // Add event listener to the form
+      document.getElementById('registrationform').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      // Get form values
+      var name = document.getElementById('id1').value;
+      // var email = document.getElementById('email').value;
+      // Move values to another JavaScript file
+      moveData(name, email);
+      });

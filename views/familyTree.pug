@@ -1,0 +1,45 @@
+script(src='js/FamilyTree.js')
+
+link(rel="icon" href="/favicon.png" type="image/x-icon")
+
+#tree
+
+script.
+
+  var data = JSON.parse(!{JSON.stringify(json)});
+  let family = new FamilyTree(document.getElementById("tree"), { 
+    nodeBinding: {
+      field_0: "name"
+    },
+    nodeMouseClick: FamilyTree.action.edit,
+     nodeMenu: {
+        details: {text:"Details"},
+        edit: {text:"Edit"}
+     },
+    nodeTreeMenu: true,
+  });
+
+    family.on('click', function(sender, args){
+        sender.editUI.show(args.node.id, false); 
+        return false; 
+    });
+
+
+  family.onUpdateNode((args) => {
+    fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(args)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+  //return false; to cancel the operation
+  });
+
+
+  family.load(data)
+
+
