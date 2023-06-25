@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const conn = express();
-const port = 4201;
+const port = ;
 const cors = require('cors')
 const uri = require('./config/key').mongoURI
-const appName = "VANSHAVALI";
+const appName = "vanshavali dev";
 
 const jwt = require('jsonwebtoken');
 const secret = 'supersecret';
